@@ -6,29 +6,28 @@ public class Main {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int number1, number2, number3, number4, number5, number6;
+        int[] numbers = new int[6];
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
 
-        number1 = Integer.parseInt(stringTokenizer.nextToken());
-        number2 = Integer.parseInt(stringTokenizer.nextToken());
-        number3 = Integer.parseInt(stringTokenizer.nextToken());
-        number4 = Integer.parseInt(stringTokenizer.nextToken());
-        number5 = Integer.parseInt(stringTokenizer.nextToken());
-        number6 = Integer.parseInt(stringTokenizer.nextToken());
+        for (int i = 0; i < numbers.length; i++)
+        {
+            numbers[i] = Integer.parseInt(stringTokenizer.nextToken());
+        }
 
-        number1 = 1 - number1;
-        number2 = 1 - number2;
-        number3 = 2 - number3;
-        number4 = 2 - number4;
-        number5 = 2 - number5;
-        number6 = 8 - number6;
+        for (int i = 0; i < 2; i++)
+        {
+            numbers[i] = 1 - numbers[i];
+        }
 
-        bufferedWriter.write(number1 + " ");
-        bufferedWriter.write(number2 + " ");
-        bufferedWriter.write(number3 + " ");
-        bufferedWriter.write(number4 + " ");
-        bufferedWriter.write(number5 + " ");
-        bufferedWriter.write(number6 + " ");
+        for (int i = 2; i < 5; i++)
+        {
+            numbers[i] = 2 - numbers[i];
+        }
+
+        numbers[5] = 8 - numbers[5];
+
+        for (int number : numbers)
+            bufferedWriter.write(number+" ");
 
         bufferedWriter.flush();
         bufferedWriter.close();
